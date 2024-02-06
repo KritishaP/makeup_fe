@@ -12,8 +12,9 @@ export default {
       },
       colors: {
         dark: '#0C080B',
-        green: '#1E3329',
+        greenish: '#1E3329',
         yellowish: '#FFBD24',
+        pinkish: '#fed2d1',
         'dark-grey': '#B8B8B8',
         'light-grey': '#ececec',
         light: '#FAFAFA'
