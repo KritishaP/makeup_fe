@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import HomeLayout from "../layouts/home.layout"
-import { About, Home, Search } from "../pages"
+import { About, Home, ProductDetail, Search } from "../pages"
 
 const Routing = () => {
   return (<>
@@ -10,6 +10,7 @@ const Routing = () => {
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
           <Route path="search" element={<Search />} />
+          <Route path="product/:id" element={<ProductDetail />} />
         </Route>
 
 

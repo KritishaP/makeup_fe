@@ -1,11 +1,12 @@
 import { useEffect } from "react";
 import ButtonLink from "../ButtonLink/ButtonLink"
-import useGetProducts from "../ProductFetch/useGetProducts"
 import SectionTitle from "../SectionTitle/SectionTitle"
-import Product from "../Product/Product";
+import ProductCard from "../ProductCard/ProductCard";
+import useGetProducts from "../../ProductFetch/useGetProducts";
 
 const TopProducts = () => {
   const { products, getTopProducts } = useGetProducts();
+
   useEffect(() => {
     getTopProducts()
   }, [])
@@ -16,17 +17,16 @@ const TopProducts = () => {
         <ButtonLink path={'/about'} text={"see more"} isMain={true} />
       </div>
 
-
       <div className="flex flex-wrap" >
         {
           products.map(product => (
-            <Product key={product.id}
+            <ProductCard key={product.id}
               id={product.id}
               name={product.name}
               brand={product.brand}
               imgUrl={product.api_featured_image}
               price={product.price}
-              currency={product.price_sign}
+
             />
           ))
         }

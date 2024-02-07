@@ -20,8 +20,8 @@ export default {
         light: '#FAFAFA'
       },
       zIndex: {
-        '-1': -1
-      }
+        '-1': -1,
+      },
     },
   },
   plugins: [],
