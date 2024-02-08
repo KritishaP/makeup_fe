@@ -5,16 +5,16 @@ const BenefitsItem = ({ item }) => {
     <div className="flex flex-1">
       <div className="relative mr-4  ">
 
-        <div className=" absolute -z-1  bg-yellow-500 h-10 rounded-full top-0 w-10 ml-4"></div>
+        <div className=" absolute -z-1  bg-yellow-400 h-10 rounded-full top-0 w-10 ml-4"></div>
 
         {
-          item.title === 'Products' && <ShoppingCartIcon className="h-8 w-8 ml-4" />
+          item.title === 'Products' && <ShoppingCartIcon className="h-8 w-8 ml-7 mt-1" />
         }
         {
-          item.title === 'Payments' && <BanknotesIcon className="h-8 w-8" />
+          item.title === 'Payments' && <BanknotesIcon className="h-8 w-8 ml-7 mt-1" />
         }
         {
-          item.title === 'Delivery' && <TruckIcon className="h-8 w-8 ml-4" />
+          item.title === 'Delivery' && <TruckIcon className="h-8 w-8 ml-7 mt-1" />
         }
       </div>
 

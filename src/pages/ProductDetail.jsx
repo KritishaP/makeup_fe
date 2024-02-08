@@ -19,7 +19,7 @@ const ProductDetail = () => {
   if (!singleProduct) return <p>loading...</p>
   return (<>
 
-    <div className="mt-20 container mx-auto rounded-md bg-white  p-4">
+    <div className="mt-20 mb-20 container mx-auto rounded-md bg-white  p-4">
 
       <div className="mb-10 ">
         <ProductTitle name={singleProduct.name} isMain={false} />
@@ -56,10 +56,16 @@ const ProductDetail = () => {
 
 
 
+
+
+
+
+    </div>
+    <div className="container mx-auto ">
       <Benefits />
+    </div>
+    <div className="container mx-auto mb-20 bg-white">
       <RecommendedProducts product={singleProduct} />
-
-
     </div>
 
 
