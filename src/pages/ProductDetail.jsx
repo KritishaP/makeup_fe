@@ -1,20 +1,25 @@
-import { useParams } from "react-router-dom"
+
+import { useLocation } from "react-router-dom";
 import useGetProducts from "../ProductFetch/useGetProducts"
-import { useEffect } from "react";
-import { ProductPrice, ProductTitle } from "../components";
+
+import { Benefits, ProductPrice, ProductTitle, RecommendedProducts } from "../components";
+import { useLayoutEffect } from "react";
+
 
 
 const ProductDetail = () => {
-  const { id } = useParams()
-  const { singleProduct, getSingleProduct } = useGetProducts();
-  useEffect(() => {
-    getSingleProduct(id)
-  }, [])
+  const location = useLocation();
+  const { singleProduct } = useGetProducts();
+
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+
+  }, [location.pathname]);
 
   if (!singleProduct) return <p>loading...</p>
   return (<>
 
-    <div className="mt-20 container mx-auto bg-white h-screen p-4">
+    <div className="mt-20 container mx-auto rounded-md bg-white  p-4">
 
       <div className="mb-10 ">
         <ProductTitle name={singleProduct.name} isMain={false} />
@@ -22,13 +27,13 @@ const ProductDetail = () => {
       </div>
 
       <div className="flex mb-10">
-        <div className=" flex items-center justify-center w-screen mb-10">
+        <div className=" flex items-center justify-center w-screen mb-10 ">
           <img src={`https://${singleProduct.api_featured_image}`} alt={singleProduct.name} />
         </div>
 
 
         <div >
-          <p className="text-orange-400 font-krona text-sm">{singleProduct.product_type}</p>
+          <p className="text-orange-400 font-krona text-sm">{singleProduct.product_type.replace(/_/g, ' ')}</p>
           <ProductTitle name={singleProduct.name} isMain={true} />
 
 
@@ -49,23 +54,14 @@ const ProductDetail = () => {
       </div>
 
 
-      {/*<div className="flex flex-wrap" >
-        {
-          products.map(product => (
-            <Product key={product.id}
-              id={product.id}
-              name={product.name}
-              brand={product.brand}
-              imgUrl={product.api_featured_image}
-              price={product.price}
 
-            />
-          ))
-        }
-      </div> */}
+
+      <Benefits />
+      <RecommendedProducts product={singleProduct} />
 
 
     </div>
+
 
 
   </>)

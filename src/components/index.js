@@ -6,6 +6,8 @@ import SecondaryBanner from "./SecondaryBanner/SecondaryBanner";
 import UniquesellingPoint from "./UniqueSellingPoint/UniquesellingPoint";
 import ProductPrice from "./ProductPrice/ProductPrice";
 import ProductTitle from "./ProductTitle/ProductTitle";
+import RecommendedProducts from "./RecommendedProducts/RecommendedProducts";
+import Benefits from "./Benefits/Benefits";
 
 export {
   Footer,
@@ -15,5 +17,7 @@ export {
   SecondaryBanner,
   UniquesellingPoint,
   ProductPrice,
-  ProductTitle
+  ProductTitle,
+  RecommendedProducts,
+  Benefits
 }

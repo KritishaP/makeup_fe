@@ -1,60 +1,28 @@
 import axios from "axios"
-import { useEffect, useState } from "react"
+import { useCallback, useEffect, useState } from "react"
+import { useParams } from "react-router-dom"
 
 const BASE_URL = 'http://makeup-api.herokuapp.com/api/v1/products'
 const useGetProducts = () => {
-  const [products, setProducts] = useState([])
+  const { id } = useParams()
+
   const [singleProduct, setSingleProduct] = useState(null)
 
-  const getTopProducts = () => {
-    axios.get
-      (`${BASE_URL}.json`,
-        {
-          params: {
-            product_tags: 'ecocert',
 
-          }
-        })
-      .then(response => setProducts(response.data))
-  }
-
-  const getSingleProduct = (id) => {
+  const getSingleProduct = useCallback(() => {
     axios.get(`${BASE_URL}/${id}.json`).then(response => {
-      setSingleProduct(response.data);
-      // getRecommendedProducts(response.data);
+      setSingleProduct(response.data)
     })
-  }
-
-  {/*const getRecommendedProducts = (product) => {
-    let key;
-    let value;
-    if (product.product_type) {
-      key = 'product_type';
-      value = product.product_type
-    }
-    else {
-      key = 'brand';
-      value = product.brand;
-    }
-    axios.get(`${BASE_URL}.json`,
-      {
-        params: {
-          [key]: value,
-        }
-      }
-    ).then(response => setProducts(response.data))
-  } */}
+  }, [id])
 
   useEffect(() => {
-    if (!singleProduct) {
-      getSingleProduct()
-    }
-  }, [singleProduct, getSingleProduct])
+    //if (!singleProduct) {
+    getSingleProduct();
+    //}
+  }, [id, getSingleProduct]);
 
   return {
-    products,
-    getTopProducts,
-    getSingleProduct,
+
     singleProduct
   }
 }

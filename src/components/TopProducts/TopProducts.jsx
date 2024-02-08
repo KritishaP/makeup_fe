@@ -1,15 +1,12 @@
-import { useEffect } from "react";
+
 import ButtonLink from "../ButtonLink/ButtonLink"
 import SectionTitle from "../SectionTitle/SectionTitle"
 import ProductCard from "../ProductCard/ProductCard";
-import useGetProducts from "../../ProductFetch/useGetProducts";
+import useGetTopProducts from "../../ProductFetch/useGetTopProducts";
 
 const TopProducts = () => {
-  const { products, getTopProducts } = useGetProducts();
+  const { products } = useGetTopProducts();
 
-  useEffect(() => {
-    getTopProducts()
-  }, [])
   return (<>
     <div className="container mx-auto mb-10">
       <div className="flex items-center justify-between">
