@@ -1,8 +1,8 @@
 import { NavLink } from "react-router-dom"
 
-const BrandLink = () => {
+const BrandLink = ({ className }) => {
   return (<>
-    <NavLink to={'/'} className="text-2xl text-orange-600">Glamify</NavLink>
+    <NavLink to={'/'} className={` font-krona ${className}`}>Glamify</NavLink>
   </>)
 }
 export default BrandLink

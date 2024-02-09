@@ -9,6 +9,7 @@ import ProductTitle from "./ProductTitle/ProductTitle";
 import RecommendedProducts from "./RecommendedProducts/RecommendedProducts";
 import Benefits from "./Benefits/Benefits";
 import ProductPreview from "./ProductPreview/ProductPreview";
+import BrandLink from "./Brandlink/Brandlink";
 
 export {
   Footer,
@@ -21,5 +22,6 @@ export {
   ProductTitle,
   RecommendedProducts,
   Benefits,
-  ProductPreview
+  ProductPreview,
+  BrandLink
 }

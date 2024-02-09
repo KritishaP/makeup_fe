@@ -10,7 +10,7 @@ const Navbar = () => {
 
     <nav className='font-krona container mx-auto p-3 md:flex md:justify-between '>
       <div >
-        <BrandLink />
+        <BrandLink className={"text-orange-600 text-2xl"} />
       </div>
 
       <div onClick={() => setOpen(!open)} className='absolute right-8 top-6 cursor-pointer md:hidden'>
