@@ -14,7 +14,7 @@ const TopProducts = () => {
         <ButtonLink path={'/about'} text={"see more"} isMain={true} className={"hidden md:block"} />
       </div>
 
-      <div className="flex flex-wrap mt-4" >
+      <div className="flex flex-wrap mt-4 justify-center" >
         {
           products.map(product => (
             <ProductCard key={product.id}
