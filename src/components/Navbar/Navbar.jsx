@@ -19,7 +19,7 @@ const Navbar = () => {
         }
       </div>
 
-      <ul className={` md:flex md:items-center  md:pl-0 md:static pl-9 md:pb-0 pb-12 absolute md:z-auto left-0 w-full md:w-auto   bg-light-grey ${!open ? 'hidden' : 'visible'}`}>
+      <ul className={` md:flex md:items-center  md:pl-0 md:static pl-9 md:pb-0 pb-12 absolute md:z-auto left-0 w-full md:w-auto   bg-white ${!open ? 'hidden' : 'visible'}`}>
         <NavTabs />
       </ul>
 

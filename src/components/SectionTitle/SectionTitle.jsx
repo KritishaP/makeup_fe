@@ -1,6 +1,6 @@
-const SectionTitle = ({ text }) => {
+const SectionTitle = ({ text, className }) => {
   return (<>
-    <h3 className="font-krona md:font-semibold text-sm">{text}</h3>
+    <h3 className={`font-krona md:font-semibold text-sm ${className}`}>{text}</h3>
   </>)
 }
 export default SectionTitle

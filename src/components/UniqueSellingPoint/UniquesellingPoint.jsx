@@ -3,8 +3,8 @@ import USP from "../../assets/UniquesellingPoint.jpg"
 
 const UniquesellingPoint = () => {
   return (<>
-    <div className=" pt-20 mb-20">
-      <div className=" container  mx-auto  pb-16  flex flex-col md:flex-row items-center ">
+    <div className="bg-light-grey pt-20 mb-20">
+      <div className=" container  mx-auto pt-20 pb-16  flex flex-col md:flex-row items-center ">
         <div className="md:mr-4 mr-0 mb-4 md:mb-0 ">
           <img src={USP}
             alt="serum"

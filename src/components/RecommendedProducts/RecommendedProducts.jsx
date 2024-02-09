@@ -6,7 +6,7 @@ const RecommendedProducts = ({ product }) => {
   const products = useGetRecommendedProducts(product)
   if (products.length === 0) return null
   return (<>
-    <SectionTitle text={"For You"} />
+    <SectionTitle text={"For You"} className={'text-xl'} />
 
     <div className="flex flex-wrap">
       {products.map((item) => (
