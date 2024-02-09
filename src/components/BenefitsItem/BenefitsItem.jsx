@@ -2,10 +2,10 @@ import { BanknotesIcon, ShoppingCartIcon, TruckIcon } from "@heroicons/react/24/
 
 const BenefitsItem = ({ item }) => {
   return (<>
-    <div className="flex flex-1">
+    <div className="flex flex-1 ">
       <div className="relative mr-4  ">
 
-        <div className=" absolute -z-1  bg-yellow-400 h-10 rounded-full top-0 w-10 ml-4"></div>
+        <div className=" absolute -z-1  bg-orange-300 h-10 rounded-full top-0 w-10 ml-4"></div>
 
         {
           item.title === 'Products' && <ShoppingCartIcon className="h-8 w-8 ml-7 mt-1" />

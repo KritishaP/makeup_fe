@@ -8,6 +8,7 @@ import ProductPrice from "./ProductPrice/ProductPrice";
 import ProductTitle from "./ProductTitle/ProductTitle";
 import RecommendedProducts from "./RecommendedProducts/RecommendedProducts";
 import Benefits from "./Benefits/Benefits";
+import ProductPreview from "./ProductPreview/ProductPreview";
 
 export {
   Footer,
@@ -19,5 +20,6 @@ export {
   ProductPrice,
   ProductTitle,
   RecommendedProducts,
-  Benefits
+  Benefits,
+  ProductPreview
 }
