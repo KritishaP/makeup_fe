@@ -3,6 +3,7 @@ import ButtonLink from "../ButtonLink/ButtonLink"
 import SectionTitle from "../SectionTitle/SectionTitle"
 import ProductCard from "../ProductCard/ProductCard";
 import useGetTopProducts from "../../ProductFetch/useGetTopProducts";
+import Loader from "../loader/loader";
 
 const TopProducts = () => {
   const { products } = useGetTopProducts();
@@ -16,17 +17,26 @@ const TopProducts = () => {
 
       <div className="flex flex-wrap mt-4 justify-center" >
         {
-          products.map(product => (
-            <ProductCard key={product.id}
-              id={product.id}
-              name={product.name}
-              brand={product.brand}
-              imgUrl={product.api_featured_image}
-              price={product.price}
+          products.length === 0 ? (
+            <Loader />
+          ) : (
+            <>
+              {
+                products.map(product => (
+                  <ProductCard key={product.id}
+                    id={product.id}
+                    name={product.name}
+                    brand={product.brand}
+                    imgUrl={product.api_featured_image}
+                    price={product.price}
 
-            />
-          ))
+                  />
+                ))
+              }</>
+
+          )
         }
+
       </div>
 
 

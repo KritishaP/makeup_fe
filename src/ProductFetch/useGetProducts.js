@@ -7,9 +7,10 @@ const useGetProducts = () => {
   const { id } = useParams()
 
   const [singleProduct, setSingleProduct] = useState(null)
-
+  const [loading, setLoading] = useState(false)
 
   const getSingleProduct = useCallback(() => {
+    setLoading(true)
     axios.get(`${BASE_URL}/${id}.json`).then(response => {
       setSingleProduct(response.data)
     })
@@ -21,8 +22,11 @@ const useGetProducts = () => {
     //}
   }, [id, getSingleProduct]);
 
+  useEffect(() => {
+    setLoading(false)
+  }, [singleProduct])
   return {
-
+    loading,
     singleProduct
   }
 }
