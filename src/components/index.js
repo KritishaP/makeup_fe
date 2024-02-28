@@ -11,6 +11,7 @@ import Benefits from "./Benefits/Benefits";
 import ProductPreview from "./ProductPreview/ProductPreview";
 import BrandLink from "./Brandlink/Brandlink";
 import CopyrightSection from "./CopyrightSection/CopyrightSection";
+import Sidebar from "./Sidebar/Sidebar";
 
 export {
   Footer,
@@ -25,5 +26,6 @@ export {
   Benefits,
   ProductPreview,
   BrandLink,
-  CopyrightSection
+  CopyrightSection,
+  Sidebar
 }

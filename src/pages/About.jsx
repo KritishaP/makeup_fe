@@ -17,7 +17,7 @@ const About = () => {
           lifestyle products in online shops, the beauty marketplace and more than 2,000 stores, Glamify
           inspires customers to live their own kind of beauty by a previously unparalleled assortment.
         </p>
-        <p>
+        <div>
           <p>
             The continued expansion of the fast-growing e-commerce business is the focus of the
             <span className="font-krona">#forwardbeauty</span> , DigitalFirst strategy programme. In fiscal
@@ -25,7 +25,7 @@ const About = () => {
             cosmetics, skin and hair care as well as nutritional supplements and accessories. <span className="font-krona"> #letsdobeautiful</span>
 
           </p>
-        </p>
+        </div>
       </div>
 
     </div>

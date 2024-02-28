@@ -1,6 +1,17 @@
+
+import Sidebar from "../components/Sidebar/Sidebar"
+
 const Search = () => {
   return (<>
-    <h1>Search</h1>
+
+    <div className="search">
+      <div className="sidebar">
+        <Sidebar />
+      </div>
+      <div className="topbar">Topbar</div>
+      <div className="results">Results</div>
+    </div>
+
   </>)
 }
 export default Search
