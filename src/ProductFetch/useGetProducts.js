@@ -3,6 +3,12 @@ import { useCallback, useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 
 const BASE_URL = 'http://makeup-api.herokuapp.com/api/v1/products'
+
+const formatProduct = (data) => {
+  data.product_type = data.product_type.replace(/_/g, ' ')
+  return data
+}
+
 const useGetProducts = () => {
   const { id } = useParams()
 
@@ -12,14 +18,14 @@ const useGetProducts = () => {
   const getSingleProduct = useCallback(() => {
     setLoading(true)
     axios.get(`${BASE_URL}/${id}.json`).then(response => {
+      formatProduct(response.data)
       setSingleProduct(response.data)
     })
   }, [id])
 
   useEffect(() => {
-    //if (!singleProduct) {
     getSingleProduct();
-    //}
+
   }, [id, getSingleProduct]);
 
   useEffect(() => {

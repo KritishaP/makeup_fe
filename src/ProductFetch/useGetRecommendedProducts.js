@@ -1,43 +1,63 @@
+
 import axios from "axios"
-import { useEffect, useState } from "react"
-
-const BASE_URL = 'http://makeup-api.herokuapp.com/api/v1/products'
-const product_count = 5;
-const useGetRecommendedProducts = product => {
-  const [products, setProducts] = useState([])
+import { useCallback, useEffect, useState } from "react"
 
 
-  const key = product.product_type ? 'product_type' : 'brand';
-  const value = product.product_type ? product.product_type : product.brand;
 
-  const getRecommendedProducts = () => {
-    axios.get(`${BASE_URL}.json`,
-      {
-        params: {
-          [key]: value,
-        }
-      }
-    ).then(response => {
-      const { data } = response;
-      data.length = data.length > product_count ? product_count : data.length
+const PRODUCTS_COUNT = 4;
+const BASE_URL = 'http://makeup-api.herokuapp.com/api/v1/products';
 
-      setProducts(data)
-    })
-  };
+const getRandomIndex = (max, min = 0) => {
+  return Math.floor(Math.random() * (max - min) + min);
+};
 
-  useEffect(() => {
-    if (!products) return;
-    getRecommendedProducts();
-  }, [])
+const getRandomProducts = (randomIndex, data) => {
+  let i = randomIndex;
+  const products = [];
+
+  for (let index = 0; index < PRODUCTS_COUNT; index++) {
+    products.push(data[i]);
+    i++;
+  }
 
   return products;
+};
 
+const useGetRecommendedProducts = product => {
+  const [products, setProducts] = useState([]);
 
-}
+  const getRecommendedProducts = useCallback(() => {
+    setProducts([]);
+    const key = product.product_type ? 'product_type' : 'brand';
+    const value = product.product_type ? product.product_type : product.brand;
 
+    axios
+      .get(`${BASE_URL}.json`, {
+        params: {
+          [key]: value,
+        },
+      })
+      .then(response => {
+        const { data } = response;
 
+        if (data.length > PRODUCTS_COUNT) {
+          const index = getRandomIndex(data.length - PRODUCTS_COUNT);
+          const randomProducts = getRandomProducts(index, data);
 
+          setProducts(randomProducts);
+          return;
+        }
 
+        setProducts(data);
+      });
+  }, [product]);
 
+  useEffect(() => {
+    if (!product) return;
+    getRecommendedProducts();
+  }, [product, getRecommendedProducts]);
 
-export default useGetRecommendedProducts
+  return products;
+};
+
+export default useGetRecommendedProducts;
