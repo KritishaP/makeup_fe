@@ -3,13 +3,13 @@ import Pricerange from "../Pricerange/Pricerange"
 
 
 
-const Sidebar = () => {
+const Sidebar = ({ setFilter }) => {
   return (
     <>
 
       <div className="pl-6" >
         <Pricerange />
-        <CategoriesBar />
+        <CategoriesBar setFilter={setFilter} />
 
 
       </div>

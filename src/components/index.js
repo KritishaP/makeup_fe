@@ -12,6 +12,7 @@ import ProductPreview from "./ProductPreview/ProductPreview";
 import BrandLink from "./Brandlink/Brandlink";
 import CopyrightSection from "./CopyrightSection/CopyrightSection";
 import Sidebar from "./Sidebar/Sidebar";
+import Topbar from "./Topbar/Topbar";
 
 export {
   Footer,
@@ -27,5 +28,6 @@ export {
   ProductPreview,
   BrandLink,
   CopyrightSection,
-  Sidebar
+  Sidebar,
+  Topbar
 }

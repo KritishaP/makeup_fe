@@ -1,0 +1,1 @@
+export const Sorting = ['price - ascending', 'price - descending', 'rating - ascending', 'rating - descending'];
