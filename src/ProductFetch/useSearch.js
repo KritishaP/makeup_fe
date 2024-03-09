@@ -1,20 +1,22 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
-//import { PRODUCT_TAGS } from "../constants/Tags"
+import { useSearchState } from "../state/search-context"
+import { SET_PRODUCTS } from "../state/actionTypes"
+import { setProducts } from "../state/actionCreator"
 
 const BASE_URL = 'http://makeup-api.herokuapp.com/api/v1/products'
 
 const useSearch = () => {
-  const [products, setProducts] = useState([])
+  const [state, dispatch] = useSearchState()
   const getProducts = params => {
-    setProducts([])
+    dispatch(setProducts([]))
     axios.get
       (`${BASE_URL}.json`, {
         params,
       })
       .then(response => {
         const { data } = response;
-        setProducts(data)
+        dispatch(setProducts(data))
       })
   }
 
@@ -27,7 +29,7 @@ const useSearch = () => {
   useEffect(() => {
     getProducts()
   }, []);
-  return { products, setFilter };
+  return { setFilter };
 
 }
 export default useSearch

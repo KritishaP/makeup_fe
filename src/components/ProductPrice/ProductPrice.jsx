@@ -11,7 +11,7 @@ const ProductPrice = ({ price, isLarge }) => {
 export default ProductPrice
 
 ProductPrice.prototype = {
-  price: PropTypes.string.isRequired,
+  price: PropTypes.string,
   isLarge: PropTypes.bool,
 }
 
