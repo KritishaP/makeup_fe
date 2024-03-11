@@ -12,7 +12,7 @@ const TopProducts = () => {
     <div className="container mx-auto mb-10">
       <div className="flex items-center justify-between">
         <SectionTitle text={"Top products"} />
-        <ButtonLink path={'/about'} text={"see more"} isMain={true} className={"hidden md:block"} />
+        <ButtonLink path={'/search'} text={"see more"} isMain={true} className={"hidden md:block"} />
       </div>
 
       <div className="flex flex-wrap mt-4 justify-center" >
