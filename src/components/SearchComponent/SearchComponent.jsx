@@ -1,21 +1,19 @@
 import useSearch from "../../ProductFetch/useSearch"
 import Products from "../Products/Products"
 import Sidebar from "../Sidebar/Sidebar"
-import Topbar from "../Topbar/Topbar"
+import Loader from "../loader/loader"
 
 const SearchComponent = () => {
-  const { setFilter } = useSearch()
-
+  const { isLoading } = useSearch();
   return (
     <div className="search">
       <div className="sidebar">
-        <Sidebar setFilter={setFilter} />
+        <Sidebar />
       </div>
-      <div className="topbar">
-        <Topbar setFilter={setFilter} />
-      </div>
+
       <div className="results">
-        <Products />
+        {isLoading ? <Loader /> : <Products />}
+
       </div>
 
     </div>

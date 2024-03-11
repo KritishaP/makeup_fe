@@ -1,6 +1,5 @@
-import useSearch from "../ProductFetch/useSearch"
 import SearchComponent from "../components/SearchComponent/SearchComponent"
-import SearchProvider, { useSearchState } from "../state/search-context"
+import SearchProvider from "../state/search-context"
 
 
 const Search = () => {
